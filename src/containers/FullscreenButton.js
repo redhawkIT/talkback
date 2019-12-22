@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import PropTypes from "prop-types";
 
 import screenfull from 'screenfull'
@@ -7,47 +7,27 @@ import IconButton from '@material-ui/core/IconButton'
 import FullscreenIcon from '@material-ui/icons/Fullscreen'
 import FullscreenExitIcon from '@material-ui/icons/FullscreenExit'
 
-class FullscreenButton extends React.Component {
-  // state = {
-  //   fullscreen: false
-  // };
-  constructor (props) {
-    super(props)
-    this.state = { fullscreen: false }
-  }
+const FullscreenButton = () => {
+  // fullscreen state must also be tracked by the app for compatibility
+  const [fullscreen, setFullscreen] = useState(false)
 
-  componentDidMount () {
-    if (screenfull.isEnabled) {
-      screenfull.on('change', () => {
-        this.setState({
-          fullscreen: screenfull.isFullscreen
-        })
-      })
-    }
-  }
+  useEffect(() => {
+    screenfull.on('change', () => {
+      setFullscreen(screenfull.isFullscreen)
+    })
+  })
+  const handleClick = () => screenfull.isEnabled && screenfull.toggle()
 
-  handleClick = () => {
-    if (screenfull.isEnabled) {
-      screenfull.toggle()
-    }
-  }
-
-  render () {
-    return (
-      <div>
-        FOOBAR
-        {screenfull.isEnabled && (
-          <IconButton
-            aria-label='Fullscreen'
-            onClick={this.handleClick}
-            title='Fullscreen mode'
-          >
-            {this.state.fullscreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
-          </IconButton>
-        )}
-      </div>
-    )
-  }
+  if (!screenfull.isEnabled) return null
+  return (
+    <IconButton
+      aria-label='Fullscreen'
+      onClick={handleClick}
+      title='Fullscreen mode'
+    >
+      {fullscreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
+    </IconButton>
+  )
 }
 
 FullscreenButton.propTypes = {}

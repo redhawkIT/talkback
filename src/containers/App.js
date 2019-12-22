@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../static/logo.svg'
 import '../styles/App.css'
 import FullscreenButton from './FullscreenButton'
+import Dictaphone from './Dictaphone'
 
 function App () {
   return (
@@ -20,6 +21,7 @@ function App () {
           Learn React
         </a>
         <FullscreenButton />
+        <Dictaphone />
       </header>
     </div>
   )
