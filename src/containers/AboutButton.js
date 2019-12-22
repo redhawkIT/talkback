@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 // import PropTypes from "prop-types";
 
 import IconButton from '@material-ui/core/IconButton'
-import InfoIcon from '@material-ui/icons/Info';
+import InfoIcon from '@material-ui/icons/Info'
 
 const AboutButton = ({ ...props }) => {
   return (

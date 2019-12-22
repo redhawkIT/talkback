@@ -1,14 +1,14 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import FullscreenButton from './FullscreenButton';
-import ThemeButton from './ThemeButton';
-import TalkButton from './TalkButton';
-import TextButton from './TextButton';
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import FullscreenButton from './FullscreenButton'
+import ThemeButton from './ThemeButton'
+import TalkButton from './TalkButton'
+import TextButton from './TextButton'
 
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import AboutButton from './AboutButton';
+import ButtonGroup from '@material-ui/core/ButtonGroup'
+import AboutButton from './AboutButton'
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -27,16 +27,16 @@ const useStyles = makeStyles(theme => ({
   //   right: 30,
   //   margin: '0 auto'
   // },
-}));
+}))
 
 function ActionsBar () {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <AppBar
       className={classes.appBar}
-      position="fixed"
-      color="primary"
+      position='fixed'
+      color='primary'
       title='Talkback'
     >
       <Toolbar>

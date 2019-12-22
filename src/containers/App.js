@@ -2,14 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SpeechRecognition from 'react-speech-recognition'
 
-import Body from './Body'
+// import Body from './Body'
 import BigText from './BigText'
 import ActionsBar from './ActionsBar'
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 
 import '../styles/App.css'
-
 
 const theme = createMuiTheme()
 
