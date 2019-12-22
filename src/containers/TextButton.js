@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 // import PropTypes from "prop-types";
 
-import IconButton from '@material-ui/core/IconButton'
-import MessageIcon from '@material-ui/icons/Message';
+import Button from '@material-ui/core/Button'
+import MessageIcon from '@material-ui/icons/Message'
 
 const TextButton = ({ ...props }) => {
   return (
-    <IconButton
+    <Button
       onClick={() => undefined}
       {...props}
     >
       <MessageIcon />
-    </IconButton>
+    </Button>
   )
 }
 

@@ -16,7 +16,6 @@ function App () {
       <div className='App'>
         <header className='App-header'>
           <Body />
-          <FullscreenButton />
           <Dictaphone />
         </header>
       </div>

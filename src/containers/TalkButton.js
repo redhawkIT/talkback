@@ -1,18 +1,17 @@
 import React from 'react'
 // import PropTypes from "prop-types";
 
-import IconButton from '@material-ui/core/IconButton'
-
-import MicIcon from '@material-ui/icons/Mic';
+import Button from '@material-ui/core/Button'
+import MicIcon from '@material-ui/icons/Mic'
 
 const TalkButton = ({ ...props }) => {
   return (
-    <IconButton
+    <Button
       onClick={() => undefined}
       {...props}
     >
       <MicIcon />
-    </IconButton>
+    </Button>
   )
 }
 
