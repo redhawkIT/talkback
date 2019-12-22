@@ -1,29 +1,27 @@
 import React from 'react'
-import logo from '../static/logo.svg'
-import '../styles/App.css'
+import Body from './Body'
 import FullscreenButton from './FullscreenButton'
 import Dictaphone from './Dictaphone'
+import ActionsBar from './ActionsBar'
+
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+
+import '../styles/App.css'
+
+const theme = createMuiTheme()
 
 function App () {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-        <FullscreenButton />
-        <Dictaphone />
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className='App'>
+        <header className='App-header'>
+          <Body />
+          <FullscreenButton />
+          <Dictaphone />
+        </header>
+      </div>
+      <ActionsBar />
+    </ThemeProvider>
   )
 }
 

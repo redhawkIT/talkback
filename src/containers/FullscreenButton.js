@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton'
 import FullscreenIcon from '@material-ui/icons/Fullscreen'
 import FullscreenExitIcon from '@material-ui/icons/FullscreenExit'
 
-const FullscreenButton = () => {
+const FullscreenButton = ({ ...props }) => {
   // fullscreen state must also be tracked by the app for compatibility
   const [fullscreen, setFullscreen] = useState(false)
 
@@ -21,9 +21,8 @@ const FullscreenButton = () => {
   if (!screenfull.isEnabled) return null
   return (
     <IconButton
-      aria-label='Fullscreen'
       onClick={handleClick}
-      title='Fullscreen mode'
+      {...props}
     >
       {fullscreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
     </IconButton>
